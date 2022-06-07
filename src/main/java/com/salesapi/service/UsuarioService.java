@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +26,6 @@ public class UsuarioService implements UserDetailsService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
     @Autowired
     private ModelMapper modelMapper;
     @Autowired
@@ -42,7 +41,7 @@ public class UsuarioService implements UserDetailsService {
 
     public UsuarioDto createUser(UsuarioDtoRegister userDtoRegister, String fila) {
         Usuario usuario = modelMapper.map(userDtoRegister, Usuario.class);
-        usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
+        usuario.setPassword(new BCryptPasswordEncoder().encode(usuario.getPassword()));
         HashSet<SimpleGrantedAuthority> authorities = new HashSet<>();
         authorities.add(new SimpleGrantedAuthority("USER"));
         usuario.setAuthorities(authorities);

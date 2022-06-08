@@ -1,6 +1,6 @@
 # Cadastro-api
 
-<img src="https://www.linode.com/wp-content/uploads/2021/01/rabbitmq-featured-image-linode.png" alt="exemplo imagem">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf_JdK6frnyA7H32vTW1WN_StbS8UetUPZTtWTnSoBOrg0IZORRM36vsFol5MMIp2G0kM&usqp=CAU" alt="exemplo imagem">
 
 >Projeto com objetivo de praticar o uso de mensageria.
 >A api [cadastro-api](https://github.com/LuizGGoncalves/cadastro-api) é responsavel pelo cadastro de novos usuarios

@@ -18,6 +18,7 @@
 * RabbitMq
 * Spring Security
 * Autenticaçao JWT
+* Docker
 
 ## Fluxo de Funcionamento
 
